@@ -1,111 +1,91 @@
-# Java Assignment - Module 2
+# Java Assignment Solutions
 
-This repository contains Java solutions for **Module 2: Packages, Interfaces, Exception Handling, Lambdas, and Method References**.
+This repository contains comprehensive Java programming solutions across multiple modules covering core, advanced, multithreading, collections, and reflection concepts.
 
 ---
 
 ## 📁 Repository Structure
 
 ```text
-java_assignment_module2/
-├── question01_utilities/            # Section 1: Packages & Imports (Question 1)
-│   ├── utilities/
-│   │   └── MathUtils.java
-│   └── Main.java
-├── question02_shapes/               # Section 1: Packages & Interfaces (Question 2)
-│   ├── shapes/
-│   │   ├── Shape.java
-│   │   ├── Circle.java
-│   │   └── Rectangle.java
-│   └── Main.java
-├── question03_arraylist/            # Section 1: java.util ArrayList (Question 3)
-│   └── Main.java
-├── question04_calculator/           # Section 2: Functional Interface & Lambda (Question 4)
-│   ├── Calculator.java
-│   └── Main.java
-├── question05_string_sort/           # Section 2: Lambda String Sorting (Question 5)
-│   └── Main.java
-├── question06_method_ref/           # Section 2: Method Reference (Question 6)
-│   └── Main.java
-├── question07_exception_handling/   # Section 3: try-catch vs try-catch-finally (Question 7)
-│   └── Main.java
-├── question08_custom_exception/     # Section 3: Custom InvalidAgeException (Question 8)
-│   ├── InvalidAgeException.java
-│   └── Main.java
-├── question09_logging_exception/    # Section 3: Logging to File via java.util.logging (Question 9)
-│   ├── InvalidAgeException.java
-│   ├── Main.java
-│   └── app_error.log
-└── question10_factorial_throw_throws/ # Section 3: throw and throws Keywords (Question 10)
-    └── Main.java
+java_assignment/
+├── Module2/                             # Packages, Interfaces, Exception Handling & Lambdas
+│   ├── question01_utilities/            # Packages & Imports
+│   ├── question02_shapes/               # Packages & Interfaces
+│   ├── question03_arraylist/            # java.util ArrayList
+│   ├── question04_calculator/           # Functional Interface & Lambdas
+│   ├── question05_string_sort/          # Lambda String Sorting
+│   ├── question06_method_ref/           # Method References
+│   ├── question07_exception_handling/   # try-catch vs try-catch-finally
+│   ├── question08_custom_exception/     # Custom InvalidAgeException
+│   ├── question09_logging_exception/    # File Logging via java.util.logging
+│   └── question10_factorial_throw_throws/ # throw and throws Keywords
+│
+├── Module3/                             # Multithreading, Concurrency & File I/O
+│   ├── Q1 - Q13/                        # Threads, Synchronization, ReentrantLock, Deadlocks
+│   ├── Q14 - Q23/                       # Byte Streams, Character Streams, File Class, RandomAccessFile
+│   └── Q24 - Q25/                       # java.lang.Math, java.util.Date/Calendar, Regex Validation
+│
+├── Module4/                             # Collections Framework & Stream API
+│   └── Q1.java - Q46.java               # ArrayList, LinkedList, Set, Map, Queues, Iterators, Streams
+│
+└── Module5/                             # Custom Annotations & Reflection
+    ├── Q17/                             # MinLength Validation
+    ├── Q18/                             # Repeatable Annotations
+    ├── Q21/                             # Custom Annotation MinLength Demo
+    ├── Q22/                             # ClassInfo Annotation & Reflection
+    ├── Q26/                             # JsonField Serialization Demo
+    ├── Q28/                             # Reflection Annotation Parsing
+    └── Q29/                             # ExecutionTime Performance Benchmark
 ```
 
 ---
 
-## 📝 Assignment Solutions Overview
+## 📝 Modules Overview
 
-### Section 1: Packages & Imports
-- **Question 1: `utilities` Package**
-  - Defines `utilities.MathUtils` with `add(int a, int b)`.
-  - Directory: [`question01_utilities/`](./question01_utilities)
-  - Run: `cd question01_utilities && javac utilities/*.java Main.java && java Main`
+### Module 2: Packages, Interfaces, Exception Handling & Lambdas
+- **Packages & Imports**: Custom packages (`utilities.MathUtils`), package interfaces (`shapes.Shape` with `Circle` and `Rectangle`).
+- **Lambdas & Functional Interfaces**: `Calculator` functional interface, lambda comparator for string sorting, static method references (`Main::calculateSquare`).
+- **Exceptions**: `try-catch-finally` guarantees, custom `InvalidAgeException`, file error logging via `java.util.logging`, and `throw`/`throws` validation.
 
-- **Question 2: `shapes` Package & Interface**
-  - Defines `shapes.Shape` interface with `area()` and `perimeter()`, implemented in `Circle` and `Rectangle`.
-  - Directory: [`question02_shapes/`](./question02_shapes)
-  - Run: `cd question02_shapes && javac shapes/*.java Main.java && java Main`
+### Module 3: Multithreading, Locks, File I/O & Concurrency
+- **Threads & Synchronization**: Thread lifecycle, producer-consumer pattern, odd-even printer, dining philosophers, ticket booking synchronization.
+- **Lock Management**: `ReentrantLock` counter protection, deadlock simulation, and deadlock avoidance using `tryLock()`.
+- **I/O Streams**: Byte streams (`FileInputStream`/`FileOutputStream`), Character streams (`FileReader`/`FileWriter`), `BufferedReader`, `File` operations, `RandomAccessFile`.
+- **Utilities**: Regular expression validation (email pattern), `java.util.Date`, and `java.util.Calendar`.
 
-- **Question 3: `java.util.ArrayList`**
-  - Uses `java.util.ArrayList` to store and display integers.
-  - Directory: [`question03_arraylist/`](./question03_arraylist)
-  - Run: `cd question03_arraylist && javac Main.java && java Main`
+### Module 4: Java Collections & Streams
+- Comprehensive implementations covering `List`, `Set`, `Queue`, and `Map` interfaces.
+- Generics, custom comparators, priority queues, and Java 8 Stream API data pipelines (filtering, mapping, reducing, collecting).
 
-### Section 2: Interfaces, Lambdas & Method References
-- **Question 4: `Calculator` Functional Interface**
-  - Implements addition, subtraction, and multiplication using lambda expressions.
-  - Directory: [`question04_calculator/`](./question04_calculator)
-  - Run: `cd question04_calculator && javac Calculator.java Main.java && java Main`
-
-- **Question 5: String Sorting with Lambda**
-  - Sorts a list of strings in descending order using lambda comparator.
-  - Directory: [`question05_string_sort/`](./question05_string_sort)
-  - Run: `cd question05_string_sort && javac Main.java && java Main`
-
-- **Question 6: Method Reference**
-  - Calculates square of a number using a static method reference (`Main::calculateSquare`).
-  - Directory: [`question06_method_ref/`](./question06_method_ref)
-  - Run: `cd question06_method_ref && javac Main.java && java Main`
-
-### Section 3: Errors and Exceptions
-- **Question 7: `try-catch` vs `try-catch-finally`**
-  - Demonstrates `ArithmeticException` handling and guarantees execution of `finally` block.
-  - Directory: [`question07_exception_handling/`](./question07_exception_handling)
-  - Run: `cd question07_exception_handling && javac Main.java && java Main`
-
-- **Question 8: Custom Exception (`InvalidAgeException`)**
-  - Throws `InvalidAgeException` when user age < 18.
-  - Directory: [`question08_custom_exception/`](./question08_custom_exception)
-  - Run: `cd question08_custom_exception && javac InvalidAgeException.java Main.java && java Main`
-
-- **Question 9: Exception Logging to File**
-  - Logs `InvalidAgeException` stack trace to `app_error.log` using `java.util.logging.Logger`.
-  - Directory: [`question09_logging_exception/`](./question09_logging_exception)
-  - Run: `cd question09_logging_exception && javac InvalidAgeException.java Main.java && java Main`
-
-- **Question 10: `throw` and `throws` Keywords**
-  - Demonstrates method signature exception declaration (`throws`) and explicit throwing (`throw`) for negative inputs in factorial calculation.
-  - Directory: [`question10_factorial_throw_throws/`](./question10_factorial_throw_throws)
-  - Run: `cd question10_factorial_throw_throws && javac Main.java && java Main`
+### Module 5: Annotations & Reflection
+- Custom runtime annotations (`@ClassInfo`, `@MinLength`, `@JsonField`, `@ExecutionTime`).
+- Reflection API for inspecting metadata, validating field constraints, measuring execution time, and parsing annotations dynamically.
 
 ---
 
 ## ⚙️ Compilation & Execution
 
-Each folder is self-contained. Navigate to any question directory and run:
+Each folder/file is self-contained. To run any solution:
 
 ```bash
-javac *.java
+# Example for Module 2 questions
+cd Module2/question01_utilities
+javac utilities/*.java Main.java
 java Main
+
+# Example for Module 4 questions
+cd Module4
+javac Q1.java
+java Q1
+
+# Example for Module 5 questions
+cd Module5/Q22
+javac ClassInfoDemo.java
+java ClassInfoDemo
 ```
 
-*(For packages like `shapes` or `utilities`, compile subfolders with `javac package_name/*.java Main.java`)*
+---
+
+## 👤 Author
+
+- **Simran Maurya** ([@simranmaurya123](https://github.com/simranmaurya123))
